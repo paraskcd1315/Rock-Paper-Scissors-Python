@@ -1,4 +1,4 @@
-POSSIBLE_ACTIONS = ["", "Rock", "Paper", "Scissor"]
+POSSIBLE_ACTIONS = ["", "🪨", "📃", "✂️"]
 
 MENU = """
 ------------------------

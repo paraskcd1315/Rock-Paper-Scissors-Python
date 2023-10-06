@@ -19,6 +19,7 @@ Rock, Paper, Scissor
 import random
 import constants
 from winningConditions import winnerConditions
+import os
 
 userScore = 0
 machineScore = 0
@@ -46,23 +47,40 @@ while True:
 
             print("\n" + winner[0])
             print(f"""
-            -----------------------------
-                        SCORE
-            Your Score      Machine Score
-                {userScore}                 {machineScore}
-            -----------------------------
+-----------------------------
+            SCORE
+Your Score      Machine Score
+    {userScore}                 {machineScore}
+-----------------------------
             """)
 
             askUser = input("\nWould you like to play again? y for yes n for no - ")
             if askUser.lower() == "y":
+                os.system('cls')
                 continue
             elif askUser.lower() == "n":
+                os.system('cls')
+                print(f"""
+-----------------------------
+            SCORE
+Your Score      Machine Score
+    {userScore}                 {machineScore}
+-----------------------------
+            """)
                 print("\nThanks for playing")
                 break
             else:
                 raise
 
         elif user_action == 4:
+            os.system('cls')
+            print(f"""
+-----------------------------
+            SCORE
+Your Score      Machine Score
+    {userScore}                 {machineScore}
+-----------------------------
+            """)
             print("\nThanks for playing.")
             break
 
@@ -70,6 +88,7 @@ while True:
             raise
 
     except:
+        os.system('cls')
         print("\nIncorrect Option. Closing game.")
         break
         
