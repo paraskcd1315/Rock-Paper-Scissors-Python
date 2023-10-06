@@ -20,6 +20,9 @@ import random
 import constants
 from winningConditions import winnerConditions
 
+userScore = 0
+machineScore = 0
+
 while True:
     try:
         user_action = int(input(constants.MENU))
@@ -27,7 +30,29 @@ while True:
 
         if 0 < user_action <= 3:
             print(f"\nYou chose {constants.POSSIBLE_ACTIONS[user_action]}, Computer chose {constants.POSSIBLE_ACTIONS[computer_action]}")
-            print("\n" + winnerConditions(user_action, computer_action))
+            winner = winnerConditions(user_action, computer_action)
+
+            if winner[1] == True:
+                userScore += 1
+            else:
+                if userScore != 0:
+                    userScore -= 1
+
+            if winner[2] == True:
+                machineScore += 1
+            else:
+                if machineScore != 0:
+                    machineScore -= 1
+
+            print("\n" + winner[0])
+            print(f"""
+            -----------------------------
+                        SCORE
+            Your Score      Machine Score
+                {userScore}                 {machineScore}
+            -----------------------------
+            """)
+
             askUser = input("\nWould you like to play again? y for yes n for no - ")
             if askUser.lower() == "y":
                 continue
