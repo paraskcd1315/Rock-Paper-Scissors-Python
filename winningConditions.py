@@ -3,7 +3,7 @@ def winnerConditions(user_action, computer_action):
         return "It's a TIE!"
     elif user_action == 1:
         if computer_action == 3:
-            return f"Rock smashes Scissors. You WON!"
+            return "Rock smashes Scissors. You WON!"
         else:
             return "Paper covers Rock. You LOST!"
     elif user_action == 2:
